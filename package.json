@@ -3,7 +3,8 @@
   "scripts": {
     "clean": "rimraf output && rimraf .pulp-cache",
     "build": "eslint src && pulp build -- --censor-lib --strict",
-    "test": "pulp test"
+    "test": "pulp test",
+    "test-bundled-nofill": "pulp browserify -O --to output/test.js -I test --main Test.Main && node -e \"delete Array.prototype.fill; require('./output/test.js');\""
   },
   "devDependencies": {
     "eslint": "^4.19.1",

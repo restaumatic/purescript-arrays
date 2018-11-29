@@ -16,6 +16,7 @@ script:
   - npm run -s build
   - bower install
   - npm -s test
+  - npm -s run test-bundled-nofill
 after_success:
 - >-
   test $TRAVIS_TAG &&
